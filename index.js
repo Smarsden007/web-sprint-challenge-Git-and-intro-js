@@ -359,10 +359,19 @@ Use artistByCountry to do the following:
 For example artistByCountry(artists, 'Spanish') will return: [ 'Salvador Dali', 'Pablo Picasso', 'Francisco Goya']
 */
 
-function artistByCountry(/*Your Code Here*/) {
-  /*Your Code Here*/
+function artistByCountry(arr, nash) {
+  let newArr = []
+
+  arr.forEach(artist => {
+    if (artist.nationality === nash) {
+      newArr.push(artist.name)
+    }
+  })
+  console.log(newArr, "SSSSSSSSSSSSSSSSSSSSSSS")
+  return newArr
 }
 
+artistByCountry(artists, "French");
 
 
 /* ***** END OF TASKS ***** */
