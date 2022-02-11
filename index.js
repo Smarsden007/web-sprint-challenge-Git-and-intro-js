@@ -246,13 +246,13 @@ If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 
 function get20s(arr) {
   let newArr = [];
-  
+
   arr.forEach(artist => {
     let years = artist.years.split(" - ");
-    
-    if(years[0] >= 1900 && years[1] <= 2000){
+
+    if (years[0] >= 1900 && years[1] <= 2000) {
       console.log(artist.name)
-      newArr.push(artist.name) 
+      newArr.push(artist.name)
     }
   })
   console.log("NEW ARR: ", newArr)
@@ -260,7 +260,7 @@ function get20s(arr) {
 }
 get20s(artists)
 
-
+//changes
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use removeArtist to do the following:
@@ -272,7 +272,7 @@ Use removeArtist to do the following:
 For example, if removeArtist is invoked with the artists array and the number 0, it will remove Amedeo Modigliani from our dataset and return the number 19. */
 
 function removeArtist(arr, idx) {
-  const newArr = arr.slice(idx, arr.length -1)
+  const newArr = arr.slice(idx, arr.length - 1)
   return newArr.length;
 }
 
@@ -294,11 +294,21 @@ Use addArtist to do the following:
 
 Example: addArtist(artists) should return the artists array with the above object added to the end of the array. */
 
-function addArtist(/*Your Code Here*/) {
-  /*Your Code Here*/
+function addArtist(arr) {
+  arr.push({
+    id: 20,
+    name: "Your Name Here",
+    years: "Your Birth Year - current day",
+    genre: "Web Design",
+    nationality: "Your Nationality Here",
+    bio: "Add 1 - 2 sentences(or use lorem ipsum)"
+  })
+
+  console.log(arr)
+  return arr
 }
 
-
+addArtist(artists)
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use lotsOfArt to do the following: 
@@ -307,8 +317,14 @@ Use lotsOfArt to do the following:
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]*/
 
-function lotsOfArt(/*Your Code Here*/) {
-  /*Your Code Here*/
+function lotsOfArt(arr) {
+  let newArr = []
+  arr.forEach(artist => {
+    if (artist.paintings >= 100) {
+      newArr.push(artist.name)
+    }
+  })
+  return newArr
 }
 
 
@@ -321,11 +337,18 @@ Use artistInfo to do the following:
 For example artistInfo(artists, 'Frida Kahlo') will return: 
   ["Frida Kahlo de Rivera (Spanish pronunciation: [ˈfɾiða ˈkalo]; born Magdalena Carmen Frida Kahlo y Calderón; 6 July 1907 – 13 July 1954) was a Mexican artist who painted many portraits, self-portraits and works inspired by the nature and artifacts of Mexico. Inspired by the country's popular culture, she employed a naïve folk art style to explore questions of identity, postcolonialism, gender, class and race in Mexican society. Her paintings often had strong autobiographical elements and mixed realism with fantasy. In addition to belonging to the post-revolutionary Mexicayotl movement, which sought to define a Mexican identity, Kahlo has been described as a surrealist or magical realist.Born to a German father and a mestiza mother, Kahlo spent most of her childhood and adult life at her family home in Coyoacán, La Casa Azul, now known and publicly accessible as the Frida Kahlo Museum. She was disabled by polio as a child. Until a traffic accident at age eighteen caused lifelong pain and medical problems, she had been a promising student headed for medical school. During her recovery, she returned to her childhood hobby of art with the idea of becoming an artist."]
 */
-function artistInfo(/*Your Code Here*/){
-  /*Your Code Here*/
+function artistInfo(arr, name) {
+  const ourArtist = arr.filter(artist => {
+    if (artist.name == name) {
+      return artist.bio
+    }
+  })
+  console.log("OUR AETIST", ourArtist)
+  console.log("OUR RETURN VALUE", ourArtist[0].bio)
+  return [ourArtist[0].bio];
 }
 
-
+artistInfo(artists, "El Greco")
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 9: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use artistByCountry to do the following: 
@@ -336,7 +359,7 @@ Use artistByCountry to do the following:
 For example artistByCountry(artists, 'Spanish') will return: [ 'Salvador Dali', 'Pablo Picasso', 'Francisco Goya']
 */
 
-function artistByCountry(/*Your Code Here*/){
+function artistByCountry(/*Your Code Here*/) {
   /*Your Code Here*/
 }
 
